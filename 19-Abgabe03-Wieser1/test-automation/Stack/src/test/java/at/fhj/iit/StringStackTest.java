@@ -2,6 +2,7 @@ package at.fhj.iit;
 
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class StringStackTest
 {
@@ -22,6 +23,7 @@ public class StringStackTest
     @Test
     public void testIsEmpty() throws Exception
     {
+        assertTrue(s.isEmpty());
     }
     
     /**
@@ -33,6 +35,8 @@ public class StringStackTest
     @Test
     public void testIsNotEmpty() throws Exception
     {
+        s.push("1");
+        assertFalse(s.isEmpty());
     }
 
     /**
@@ -48,10 +52,41 @@ public class StringStackTest
     @Test
     public void testPushPop() throws Exception
     {
+        s.push("t1");
+        assertFalse(s.isEmpty());
+        s.push("t2");
+        assertFalse(s.isEmpty());
+        s.push("t3");
+        assertFalse(s.isEmpty());
+
+        s.pop();
+        assertFalse(s.isEmpty());
+        s.pop();
+        assertFalse(s.isEmpty());
+        s.pop();
+        assertTrue(s.isEmpty());
+
+        s.isEmpty();
+        assertTrue(s.isEmpty());
     }
-    
+
+
     /**
      * Feel Free to insert other test cases for the String Stack Implementation !!!
      */
-    
+    @Test
+    public void testStackWithDifferentPushPop() throws Exception
+    {
+        s.push("t");
+        s.push("e");
+        s.pop();
+        s.push("s");
+        s.pop();
+        s.push("t");
+        s.push("!");
+        s.pop();
+
+        assertFalse(s.isEmpty());
+    }
+
 }

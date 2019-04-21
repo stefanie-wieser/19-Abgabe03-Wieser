@@ -19,6 +19,7 @@ public class Point2dTest {
 	 */
 	@Test
 	public void testSetX(){
+
 	}
 
 	/**
